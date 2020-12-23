@@ -13,7 +13,7 @@ body
     /* vh stands for view port hieght*/
     /* always stretch the background at least the full height of the screen even if there isnt enough content to cover the full screen */
     min-height: 100vh;
-    background-image: url("../images/stripe.png");
+    background-image: url("../images/stripe.PNG");
     background-repeat: no-repeat;
 
     background-size: cover;
