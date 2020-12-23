@@ -105,8 +105,8 @@ button:hover
   text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
   color: black;
   width: 200px;
-  margin-left: 40px;
-  margin-right: 20px;
+  margin-right: 2vw;
+  margin-left: 2vw;
 }
 
 .shopping_cart__num_text
@@ -117,8 +117,10 @@ button:hover
   box-shadow: 5px 10px whitesmoke;
   text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
   color: black;
-  margin-right: 40px;
-  margin-left: 20px;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  width: 10vw;
+  height: 5vh;
 }
 
 .shopping_cart__total_text
@@ -128,7 +130,7 @@ button:hover
   box-shadow: 5px 10px whitesmoke;
   text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
   color: black;
-  width: 35%;
+  width: 50%;
   margin-left: 40px;
   margin-top: 20px;
   /* margin-right: 30px; */
@@ -147,6 +149,7 @@ button:hover
   border: none;
   width: 50px;
   float: right;
+  height: 5vh;
 
   margin-left: 10px;
   margin-right: 10px;
