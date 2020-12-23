@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Pulls Favoicon from an already existing website through domain -->
+    <link rel="icon" type="image/png" href="fav.PNG">
+    <!-- Links to website with free fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Links to css style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">PnM Eats
+      <div class="select-menu">
+        <button class="menu_button" onclick="location.href='our_story.html';">
+          Our Story
+        </button>
+        <button class="menu_button" onclick="location.href='our_products.html';">
+          Our Products
+        </button>
+        <button class="menu_button" onclick="location.href='order_online.html';">
+          Order Online
+        </button>
+        <button class="menu_button" onclick="location.href='shopping_cart.html';">
+          Shopping Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="store_container">
+      <div class="item">
+        <div class="item_text">Sweet Pork</div>
+        <img src="products/sweet_pork.PNG" style="width:100%">
+        <button class="add_to_cart" onclick="addToCart('Sweet Pork', 10.00, 1)">Add To Cart</button>
+        <!-- <button class="add_to_cart" id="jerky" name="Sweet Pork" price="10.00" qty="1" onclick="addToCart()">Add To Cart</button> -->
+      </div>
+      <div class="item">
+        <div class="item_text">Sweet Chilli</div>
+        <img src="products/sweet_chilli.PNG" style="width:100%">
+        <button class="add_to_cart" onclick="addToCart('Sweet Chilli', 10.00, 1)">Add To Cart</button>
+        <!-- <button class="add_to_cart" id="jerky2" name="Sweet Chilli" price="10.00" qty="1" onclick="addToCart()">Add To Cart</button> -->
+      </div>
+      <div class="item">
+        <div class="item_text">Lemon Grass</div>
+        <img src="products/lemon_grass.PNG" style="width:100%">
+        <button class="add_to_cart" onclick="addToCart('Lemon Grass', 10.00, 1)">Add To Cart</button>
+        <!-- <button class="add_to_cart" id="jerky2" name="Lemon Grass" price="10.00" qty="1" onclick="addToCart()">Add To Cart</button> -->
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="cart.js"></script>
+
+</body>
+</html>

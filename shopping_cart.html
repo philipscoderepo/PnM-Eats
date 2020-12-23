@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+    <title>Document</title>
+    <!-- Pulls Favoicon from an already existing website through domain -->
+    <link rel="icon" type="image/png" href="fav.PNG">
+    <!-- Links to website with free fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Links to css style sheet -->
+    <link rel="stylesheet" href="shopping_cart_style.css">
+</head>
+<body>
+  <div class="header">PnM Eats
+    <div class="select-menu">
+      <button class="menu_button" onclick="location.href='our_story.html';">
+        Our Story
+      </button>
+      <button class="menu_button" onclick="location.href='our_products.html';">
+        Our Products
+      </button>
+      <button class="menu_button" onclick="location.href='order_online.html';">
+        Order Online
+      </button>
+      <button class="menu_button" onclick="location.href='shopping_cart.html';">
+        Shopping Cart
+      </button>
+    </div>
+  </div>
+  <!-- <div class="shopping_cart_text">Your Current Order</div> -->
+  <div id="shopping_cart_container">
+      <script src="cart.js">displayCart();</script>
+  </div>
+
+
+<!-- Paypal buttons -->
+  <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AfDemo53uktbdEHEcPGG_UmXtcXjoUgqEPhbDdslNAZcMoqjwEfgzQcbGFy5qxs2obeVQr1-AjEUbQZq" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+
+      var total = 0.0;
+      if(sessionStorage.getItem("cart")==null){
+        total = 0.0;
+      }
+      else{
+        var cartValue = sessionStorage.getItem( "cart" );
+        var cartObj = JSON.parse( cartValue );
+        for(i=0; i<cartObj.length; i++){
+          total += cartObj[i].qty * cartObj[i].price;
+        }
+      }
+
+        paypal.Buttons({
+          style: {
+            shape: 'rect',
+            color: 'black',
+            layout: 'vertical',
+            label: 'paypal',
+
+          },
+
+          createOrder: function(data, actions) {
+            // This function sets up the details of the transaction, including the amount and line item details.
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  value: total
+                }
+              }]
+            });
+          },
+          onApprove: function(data, actions) {
+            // This function captures the funds from the transaction.
+            return actions.order.capture().then(function(details) {
+              // This function shows a transaction success message to your buyer.
+              alert('Transaction completed by ' + details.payer.name.given_name);
+            });
+          }
+
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+  </script>
+
+
+
+</body>
+</html>
