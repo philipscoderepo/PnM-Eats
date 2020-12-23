@@ -74,8 +74,8 @@ button:hover
   border-style: outset;
   border-color: lavender;
   /* position: static; */
-  margin-left: 10px;
-  margin-right: auto;
+  margin-right: 0;
+  margin-left: 10vw;
   margin-bottom: auto;
   background-color: lightblue;
   width: 400px;
